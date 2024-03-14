@@ -29,24 +29,42 @@ const ConfigurationPanel = () => {
         Main Configuration Panel
       </Typography>
       <Divider />
-      <FilePond
-        files={shp}
-        onupdatefiles={setShp}
-        labelIdle='Drag & Drop (.shp) or <span class="filepond--label-action">Browse</span>'
-        credits={false}
-      />
-      <FilePond
-        files={dbf}
-        onupdatefiles={setDbf}
-        labelIdle='Drag & Drop (.dbf) or <span class="filepond--label-action">Browse</span>'
-        credits={false}
-      />
-      <FilePond
-        files={shx}
-        onupdatefiles={setShx}
-        labelIdle='Drag & Drop (.shx) or <span class="filepond--label-action">Browse</span>'
-        credits={false}
-      />
+      <FormControl>
+        <FormLabel htmlFor="shpFile">.shp File</FormLabel>
+        <FilePond
+          id="shpFile"
+          files={shp}
+          onupdatefiles={setShp}
+          labelIdle='Drag & Drop or <span class="filepond--label-action">Browse</span>'
+          credits={false}
+          instantUpload={false}
+          allowRevert={false}
+        />
+      </FormControl>
+      <FormControl>
+        <FormLabel htmlFor="dbfFile">.dbf File</FormLabel>
+        <FilePond
+          id="dbfFile"
+          files={dbf}
+          onupdatefiles={setDbf}
+          labelIdle='Drag & Drop or <span class="filepond--label-action">Browse</span>'
+          credits={false}
+          instantUpload={false}
+          allowRevert={false}
+        />
+      </FormControl>
+      <FormControl>
+        <FormLabel htmlFor="shxFile">.shx File</FormLabel>
+        <FilePond
+          id="shxFile"
+          files={shx}
+          onupdatefiles={setShx}
+          labelIdle='Drag & Drop or <span class="filepond--label-action">Browse</span>'
+          credits={false}
+          instantUpload={false}
+          allowRevert={false}
+        />
+      </FormControl>
       <Divider />
       <TextField
         label="Number of Constraints"
@@ -75,6 +93,8 @@ const ConfigurationPanel = () => {
           onupdatefiles={setAffectedArea}
           labelIdle='Drag & Drop or <span class="filepond--label-action">Browse</span>'
           credits={false}
+          instantUpload={false}
+          allowRevert={false}
         />
       </FormControl>
       <Box>

@@ -16,17 +16,3 @@ const TrackerMap = () => {
   );
 };
 export default TrackerMap;
-
-{
-  /* <MapContainer
-      center={[0, 0]}
-      zoom={13}
-      style={{ height: "400px", width: "100%" }}
-    >
-      <TileLayer
-        url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-      />
-      {/* Render polygons and other layers based on the model data */
-}
-// </MapContainer> */}
