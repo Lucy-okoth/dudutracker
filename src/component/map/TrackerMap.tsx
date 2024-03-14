@@ -1,9 +1,20 @@
 "use client";
 import { MapContainer, TileLayer } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+// import "leaflet-defaulticon-compatibility";
+// import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 
 const TrackerMap = () => {
   return (
-    <MapContainer zoom={13} center={[0, 0]} scrollWheelZoom={false}>
+    <MapContainer
+      center={[0.0236, 37.9062]}
+      zoom={8}
+      scrollWheelZoom={false}
+      style={{
+        width: "100%",
+        height: "95vh",
+      }}
+    >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -10,7 +10,7 @@ export default function Home() {
         <Grid item xs={12} sm={4} xl={3} sx={{ boxShadow: 2 }}>
           <ConfigurationPanel />
         </Grid>
-        <Grid item xs={12} sm={8} xl={9} overflow="auto">
+        <Grid item xs={12} sm={8} xl={9} overflow="auto" pt={3}>
           <TrackerMap />
         </Grid>
       </Grid>
