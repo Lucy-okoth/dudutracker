@@ -4,14 +4,14 @@ import {
   Box,
   Button,
   Divider,
+  Drawer,
   FormControl,
   FormLabel,
   InputLabel,
   TextField,
   Typography,
 } from "@mui/material";
-import { FilePond } from "react-filepond";
-import { useState } from "react";
+import { FilePond, registerPlugin } from "react-filepond";import { useState } from "react";
 
 // Import FilePond styles
 import "filepond/dist/filepond.min.css";
@@ -24,90 +24,102 @@ const ConfigurationPanel = () => {
   const [affectedArea, setAffectedArea] = useState<any>([]);
 
   return (
-    <Box px={3} py={4} display="flex" flexDirection="column" gap={2}>
-      <Typography fontWeight="bold" textAlign="center" variant="h6">
-        Main Configuration Panel
-      </Typography>
-      <Divider />
-      <FormControl>
-        <FormLabel htmlFor="shpFile">.shp File</FormLabel>
-        <FilePond
-          id="shpFile"
-          files={shp}
-          onupdatefiles={setShp}
-          labelIdle='Drag & Drop or <span class="filepond--label-action">Browse</span>'
-          credits={false}
-          instantUpload={false}
-          allowRevert={false}
+    <Drawer
+      variant="permanent"
+      sx={{
+        width: 300,
+        flexShrink: 0,
+        [`& .MuiDrawer-paper`]: {
+          width: 300,
+          boxSizing: "border-box",
+        },
+      }}
+    >
+      <Box px={3} py={4} display="flex" flexDirection="column" gap={2}>
+        <Typography fontWeight="bold" textAlign="center" variant="h6">
+          Main Configuration Panel
+        </Typography>
+        <Divider />
+        <FormControl>
+          <FormLabel htmlFor="shpFile">.shp File</FormLabel>
+          <FilePond
+            id="shpFile"
+            files={shp}
+            onupdatefiles={setShp}
+            labelIdle='Drag & Drop or <span class="filepond--label-action">Browse</span>'
+            credits={false}
+            instantUpload={false}
+            allowRevert={false}
+          />
+       </FormControl>
+        <FormControl>
+          <FormLabel htmlFor="dbfFile">.dbf File</FormLabel>
+          <FilePond
+            id="dbfFile"
+            files={dbf}
+            onupdatefiles={setDbf}
+            labelIdle='Drag & Drop or <span class="filepond--label-action">Browse</span>'
+            credits={false}
+            instantUpload={false}
+            allowRevert={false}
+          />
+        </FormControl>
+        <FormControl>
+          <FormLabel htmlFor="shxFile">.shx File</FormLabel>
+          <FilePond
+            id="shxFile"
+            files={shx}
+            onupdatefiles={setShx}
+            labelIdle='Drag & Drop or <span class="filepond--label-action">Browse</span>'
+            credits={false}
+            instantUpload={false}
+            allowRevert={false}
+          />
+        </FormControl>
+        <Divider />
+        <TextField
+          label="Number of Constraints"
+          type="number"
+          variant="outlined"
+          fullWidth
         />
-      </FormControl>
-      <FormControl>
-        <FormLabel htmlFor="dbfFile">.dbf File</FormLabel>
-        <FilePond
-          id="dbfFile"
-          files={dbf}
-          onupdatefiles={setDbf}
-          labelIdle='Drag & Drop or <span class="filepond--label-action">Browse</span>'
-          credits={false}
-          instantUpload={false}
-          allowRevert={false}
+        <TextField
+          label="Cell size (km)"
+          type="number"
+          variant="outlined"
+          fullWidth
         />
-      </FormControl>
-      <FormControl>
-        <FormLabel htmlFor="shxFile">.shx File</FormLabel>
-        <FilePond
-          id="shxFile"
-          files={shx}
-          onupdatefiles={setShx}
-          labelIdle='Drag & Drop or <span class="filepond--label-action">Browse</span>'
-          credits={false}
-          instantUpload={false}
-          allowRevert={false}
+        <TextField
+          label="Travel Speed (km/time)"
+          type="number"
+          variant="outlined"
+          fullWidth
         />
-      </FormControl>
-      <Divider />
-      <TextField
-        label="Number of Constraints"
-        type="number"
-        variant="outlined"
-        fullWidth
-      />
-      <TextField
-        label="Cell size (km)"
-        type="number"
-        variant="outlined"
-        fullWidth
-      />
-      <TextField
-        label="Travel Speed (km/time)"
-        type="number"
-        variant="outlined"
-        fullWidth
-      />
-      <Divider />
-      <FormControl fullWidth>
-        <FormLabel htmlFor="affectedArea">Affected Area</FormLabel>
-        <FilePond
-          id="affectedArea"
-          files={affectedArea}
-          onupdatefiles={setAffectedArea}
-          labelIdle='Drag & Drop or <span class="filepond--label-action">Browse</span>'
-          credits={false}
-          instantUpload={false}
-          allowRevert={false}
-        />
-      </FormControl>
-      <Box>
-        <Button
-          variant="contained"
-          type="submit"
-          size="large"
-          endIcon={<Save />}
-        >
-          Save Configurations
-        </Button>
+        <Divider />
+        <FormControl fullWidth>
+          <FormLabel htmlFor="affectedArea">Affected Area</FormLabel>
+          <FilePond
+            id="affectedArea"
+            files={affectedArea}
+            onupdatefiles={setAffectedArea}
+            labelIdle='Drag & Drop or <span class="filepond--label-action">Browse</span>'
+            credits={false}
+            instantUpload={false}
+            allowRevert={false}
+          />
+        </FormControl>
+        <Box>
+          <Button
+            variant="contained"
+            type="submit"
+            size="large"
+            endIcon={<Save />}
+          >
+Save Configurations
+          </Button>
+        </Box>
       </Box>
-    </Box>
+    </Drawer>
   );
 };
 export default ConfigurationPanel;

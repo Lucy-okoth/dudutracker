@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   AppBar,
   Box,
@@ -5,38 +6,40 @@ import {
   Container,
   Toolbar,
   Typography,
-} from "@mui/material";
-import Link from "next/link";
+} from '@mui/material';
+import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <AppBar variant="elevation" position="fixed" color="primary">
+    <AppBar position="fixed" color="primary">
       <Container>
         <Toolbar disableGutters>
-          <Typography>
-            <Link
-              href="/"
-              style={{
-                textDecoration: "none",
-                color: "white",
-              }}
-              color="white"
-            >
-              {"<DuduTracker Logo>"}
-            </Link>
+          <Link href="/" passHref>
+            <img
+              src="https://bioinnovate-africa.org/wp-content/uploads/2019/06/icipe_logo.jpg"
+              alt="Icipe logo"
+              className="navbar-logo"
+              style={{ width: 80, height: 'auto', borderRadius: '5px' }}
+            />
+          </Link>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Dudu Tracker
           </Typography>
-          <Box flexGrow={1}></Box>
           <Box>
-            <Button sx={{ color: "#fff" }} href="/auth/login">
-              Login
-            </Button>
-            <Button sx={{ color: "#fff" }} href="/auth/register">
-              Register
-            </Button>
+            <Link href="/auth/login" passHref>
+              <Button sx={{ color: '#fff' }}>Login</Button>
+            </Link>
+            <Link href="/auth/register" passHref>
+              <Button sx={{ color: '#fff' }}>Register</Button>
+            </Link>
+            <Link href="/" passHref>
+              <Button sx={{ color: '#fff' }}>Home</Button>
+            </Link>
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
+
 export default Navbar;
