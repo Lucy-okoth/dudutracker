@@ -6,12 +6,15 @@ import TrackerMap from "@/component/map/TrackerMap";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Grid container>
+      <Grid container spacing={3}>
         <Grid item xs={12} sm={4} xl={3} sx={{ boxShadow: 2 }}>
           <ConfigurationPanel />
         </Grid>
-        <Grid item xs={12} sm={8} xl={9} overflow="auto" pt={3}>
+        <Grid item xs={12} sm={8} xl={6} overflow="auto">
           <TrackerMap />
+        </Grid>
+        <Grid item xs={12} sm={4} xl={3} sx={{ boxShadow: 2 }}>
+          <ConfigurationPanel />
         </Grid>
       </Grid>
     </main>
