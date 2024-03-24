@@ -2,6 +2,8 @@ import styles from "./page.module.css";
 import { Grid, Typography } from "@mui/material";
 import ConfigurationPanel from "@/component/main/ConfigurationPanel";
 import TrackerMap from "@/component/map/TrackerMap";
+import TopLat from "@/component/last/TopLat";
+import Bottom from "@/component/last/Bottom";
 
 export default function Home() {
   return (
@@ -14,7 +16,8 @@ export default function Home() {
           <TrackerMap />
         </Grid>
         <Grid item xs={12} sm={4} xl={3} sx={{ boxShadow: 2 }}>
-          <ConfigurationPanel />
+          <TopLat />
+          <Bottom />
         </Grid>
       </Grid>
     </main>
