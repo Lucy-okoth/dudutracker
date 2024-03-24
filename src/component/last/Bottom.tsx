@@ -6,6 +6,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import MenuItem from "@mui/material/MenuItem";
 import Container from "@mui/material/Container";
 
 const Bottom = () => {
@@ -53,6 +54,7 @@ const Bottom = () => {
             type="number"
           />
           <TextField
+            select
             margin="normal"
             required
             fullWidth
@@ -61,7 +63,11 @@ const Bottom = () => {
             name="month"
             autoFocus
             type="number"
-          />
+          >
+            <MenuItem value="jan">Jan</MenuItem>
+            <MenuItem value="feb">Feb</MenuItem>
+            <MenuItem value="march">March</MenuItem>
+          </TextField>
           <TextField
             margin="normal"
             required
