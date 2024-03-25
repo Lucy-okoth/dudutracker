@@ -1,18 +1,29 @@
 "use client";
-
-import React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import MenuItem from "@mui/material/MenuItem";
-import Container from "@mui/material/Container";
+import React, { useState, useRef } from "react";
+import { CssBaseline, TextField, Box, Typography, Container, MenuItem } from "@mui/material";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 const TopLat = () => {
+  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
+  const calendarRef = useRef<HTMLDivElement | null>(null);
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
   };
+
+  const handleYearClick = () => {
+    calendarRef.current?.classList.toggle("hidden");
+  };
+
+  const handleDateChange = (date: Date | Date[]) => {
+    if (date instanceof Date) {
+      setSelectedDate(date);
+      calendarRef.current?.classList.add("hidden");
+    }
+  };
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -29,21 +40,6 @@ const TopLat = () => {
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField
-            select
-            margin="normal"
-            required
-            fullWidth
-            id="month"
-            label="Month"
-            name="month"
-            autoFocus
-            type="number"
-          >
-            <MenuItem value="jan">Jan</MenuItem>
-            <MenuItem value="feb">Feb</MenuItem>
-            <MenuItem value="march">March</MenuItem>
-          </TextField>
-          <TextField
             margin="normal"
             required
             fullWidth
@@ -52,7 +48,24 @@ const TopLat = () => {
             name="year"
             autoFocus
             type="number"
+            onClick={handleYearClick}
+            value={selectedDate?.getFullYear() || ""}
+            InputProps={{
+              readOnly: true,
+            }}
           />
+          <div ref={calendarRef} className="hidden">
+            <Calendar
+              onChange={handleDateChange}
+              value={selectedDate}
+              tileContent={({ date, view }) => {
+                if (view === "month") {
+                  return <div>{date.toLocaleDateString("en-US", { month: "short" })}</div>;
+                }
+                return null;
+              }}
+            />
+          </div>
           <TextField
             select
             margin="normal"
@@ -63,7 +76,11 @@ const TopLat = () => {
             name="timestep"
             autoFocus
             type="number"
-          />
+          >
+            <MenuItem value="1">1</MenuItem>
+            <MenuItem value="2">2</MenuItem>
+            <MenuItem value="3">3</MenuItem>
+          </TextField>
           <TextField
             margin="normal"
             required

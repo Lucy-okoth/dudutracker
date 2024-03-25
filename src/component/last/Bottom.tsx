@@ -47,9 +47,9 @@ const Bottom = () => {
             margin="normal"
             required
             fullWidth
-            id="lon"
-            label="Lon"
-            name="lon"
+            id="long"
+            label="Long"
+            name="long"
             autoFocus
             type="number"
           />

@@ -24,7 +24,7 @@ const ConfigurationPanel = () => {
   const [affectedArea, setAffectedArea] = useState<any>([]);
 
   return (
-    <Box px={3} py={4} display="flex" flexDirection="column" gap={2}>
+    <Box px={3} py={4} display="flex" flexDirection="column" gap={1}>
       <Typography fontWeight="bold" textAlign="center" variant="h6">
         Main Configuration Panel
       </Typography>
