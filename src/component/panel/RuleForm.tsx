@@ -1,5 +1,5 @@
 import { Box, Grid, TextField, Typography } from "@mui/material";
-import { UploadedFileInfo } from "./SibarPanel";
+import { UploadedFileInfo } from "./SidebarPanel";
 
 const RuleForm = ({
   uploadedInfo,

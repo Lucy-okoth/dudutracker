@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
-import SidebarPanel from "../panel/SibarPanel";
+import SidebarPanel from "../panel/SidebarPanel";
 import { useState } from "react";
 
 import { LocalizationProvider } from "@mui/x-date-pickers";

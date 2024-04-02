@@ -230,7 +230,7 @@ const SidebarPanel = ({
          fullWidth
        />
        <Divider />
-       <FormControl fullWidth>
+       {/* <FormControl fullWidth>
          <FormLabel htmlFor="affectedArea">Affected Area</FormLabel>
          <FilePond
            id="affectedArea"
@@ -241,7 +241,7 @@ const SidebarPanel = ({
            instantUpload={false}
            allowRevert={false}
          />
-       </FormControl>
+       </FormControl> */}
        <Box mb={3}>
          <Button
            variant="contained"
@@ -269,7 +269,7 @@ const SidebarPanel = ({
            </Grid>
          </Grid>
          <Button variant="contained" color="primary" sx={{ mt: 2 }}>
-           CALIBRATE
+           Run Model
          </Button>
        </Box>
      </Box>
