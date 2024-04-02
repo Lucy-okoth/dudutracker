@@ -238,25 +238,6 @@ const SidebarPanel = ({
           </Button>
         </Box>
         <Divider />
-        <Box mt={3}>
-          <Grid container columnGap={2} rowGap={3}>
-            <Grid item xs={5}>
-              <TextField type="number" label="Lat" fullWidth />
-            </Grid>
-            <Grid item xs={5}>
-              <TextField type="number" label="Lon" fullWidth />
-            </Grid>
-            <Grid item xs={5}>
-              <DatePicker label="Start Period" views={["month", "year"]} />
-            </Grid>
-            <Grid item xs={5}>
-              <TextField type="number" label="Diff" fullWidth />
-            </Grid>
-          </Grid>
-          <Button variant="contained" color="primary" sx={{ mt: 2 }}>
-            CALIBRATE
-          </Button>
-        </Box>
       </Box>
     </Drawer>
   );
