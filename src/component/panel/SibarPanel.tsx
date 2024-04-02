@@ -32,6 +32,7 @@ import { FilePondFile } from "filepond";
 import RuleForm from "./RuleForm";
 import { DatePicker } from "@mui/x-date-pickers";
 import DataDisplayBox from "./DataDisplayBox";
+//  <DataDisplayBox uploadedCovariance={uploadedCovariance} /> 
 export interface UploadedFileInfo {
  fileType: string;
  file: FilePondFile;
@@ -126,7 +127,7 @@ const SidebarPanel = ({
          Configuration Panel
        </Typography>
        <Divider />
-       <FormControl>
+       {/* <FormControl>
          <FormLabel htmlFor="csv">CSV File</FormLabel>
          <FilePond
            id="csv"
@@ -137,7 +138,7 @@ const SidebarPanel = ({
            instantUpload={false}
            allowRevert={false}
          />
-       </FormControl>
+       </FormControl> */}
 
 
        <Box

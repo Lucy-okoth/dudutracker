@@ -20,7 +20,7 @@ const RuleForm = ({
           <TextField variant="outlined" label="Min" type="number" />
         </Grid>
         <Grid item xs={12} md={4}>
-          <TextField variant="outlined" label="Min" type="number" />
+          <TextField variant="outlined" label="Max" type="number" />
         </Grid>
       </Grid>
     </Box>
