@@ -14,7 +14,7 @@
     "@hookform/resolvers": "^3.3.4",
     "@mui/icons-material": "^5.15.13",
     "@mui/material": "^5.15.13",
-    "@mui/x-date-pickers": "^7.0.0",
+    "@mui/x-date-pickers": "^7.1.0",
     "dayjs": "^1.11.10",
     "filepond": "^4.30.6",
     "filepond-plugin-file-validate-type": "^1.2.9",
